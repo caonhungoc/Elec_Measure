@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <title>Demo</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <!--css-->
+  <link href="stylesheet/style.css" rel="stylesheet" media="all">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <!-- Favicons -->
+  <link rel="icon" href="images/user.png" type="image/vnd.microsoft.icon">
+</head>
+
+<body class="top" id="top">
+  <main class="article">
+    <!-- ==============SIDEBAR=============== -->
+    <div class="sidebar">
+      <div class="inner">
+        <div class="user">
+          <div class="user__img">
+            <img src="images/user.png" alt="cat">
+          </div>
+          <p class="user__name">USERNAME</p>
+          <p class="user__role">Role: Administrator</p>
+        </div>
+        <div class="sidebar__logo">
+          <img src="images/logo.png" alt="logo">
+        </div>
+      </div>
+    </div>
+    <!-- ================MAIN================ -->
+    <div class="main">
+      <div class="main__chart">
+        <div class="heading">
+          <div class="hamburger js-menu"><span></span></div>
+          <div class="ttl">
+            <!-- <p class="ttl__date" id="txt-chart-date">30 Jan, 2020</p> -->
+            <p class="ttl__date" id="txt-chart-date"><input type="text" id="datepicker"></p>
+            <p class="ttl__time" id="txt-chart-time">6:00 AM - 29 Jan, 2020<em>
+                <->
+              </em>6:00 AM - 30 Jan, 2020</p>
+          </div>
+        </div>
+        <!-- Chart -->
+        <div class="chart js-chart">
+          <div class="inner">
+            <canvas id="chart" width="1076" height="378" class="chartjs-render-monitor"></canvas>
+          </div>
+        </div>
+        <!-- end Chart -->
+        <!-- <button class="c-btn" id="btn-change-date">CHANGE DATE</button> -->
+        <ul class="legend">
+          <p class="legend__ttl"><em style="background:#DDC7A7"></em>Power 1</p>
+          <p class="legend__ttl"><em style="background:#BEDA8D"></em>Power 2</p>
+          <p class="legend__ttl"><em style="background:#be8dda"></em>Power 3</p>
+          <p class="legend__ttl"><em style="background:#0a3a19"></em>Power 4</p>
+          </li>
+      </div>
+      <div class="status-data">
+        <div class="left">
+          <!-- Status Data -->
+          <ul class="lst">
+            <li class="lst__item">
+              <p class="ttl">POWER 1:</p>
+              <div class="info">
+                <p class="info__date"><em>Last update:</em> 12:02:40 AM</p>
+                <p class="info__num" id="txt-power1">0<em>W</em></p>
+              </div>
+            </li>
+            <li class="lst__item">
+              <p class="ttl">POWER 2:</p>
+              <div class="info">
+                <p class="info__date"><em>Last update:</em> 12:02:40 AM</p>
+                <p class="info__num" id="txt-power2">0<em>W</em></p>
+              </div>
+            </li>
+            <li class="lst__item">
+              <p class="ttl">POWER 3:</p>
+              <div class="info">
+                <p class="info__date"><em>Last update:</em> 12:02:40 AM</p>
+                <p class="info__num" id="txt-power3">0<em>W</em></p>
+              </div>
+            </li>
+            <li class="lst__item">
+              <p class="ttl">POWER 4:</p>
+              <div class="info">
+                <p class="info__date"><em>Last update:</em> 12:02:40 AM</p>
+                <p class="info__num" id="txt-power4">0<em>W</em></p>
+              </div>
+            </li>
+          </ul>
+          <!-- End Status Data -->
+          <div class="left__btn"><button class="c-btn" id="btn-update">UPDATE</button></div>
+        </div>
+        <div class="right">
+          <ul class="lst">
+            <li class="lst__item">
+              <div class="device">
+                <p class="device__num">Device 1</p>
+                <p class="device__status" id="txt-dev-1">Current state:<em>ON</em></p>
+              </div>
+              <div class="btn"><button class="c-btn" id="btn-dev-1">TURN OFF</button></div>
+            </li>
+            <li class="lst__item">
+              <div class="device">
+                <p class="device__num">Device 2</p>
+                <p class="device__status" id="txt-dev-2">Current state:<em>ON</em></p>
+              </div>
+              <div class="btn"><button class="c-btn" id="btn-dev-2">TURN OFF</button></div>
+            </li>
+            <li class="lst__item">
+              <div class="device">
+                <p class="device__num">Device 3</p>
+                <p class="device__status" id="txt-dev-3">Current state:<em>ON</em></p>
+              </div>
+              <div class="btn"><button class="c-btn" id="btn-dev-3">TURN OFF</button></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <script src="socket.io/socket.io.js"></script>
+  <script src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+  <script src="scripts/socket.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+  <script src="scripts/app.js"></script>
+</body>
+
+</html>
