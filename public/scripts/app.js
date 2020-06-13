@@ -1,6 +1,6 @@
-const NUM_DEV = 3;
-const DEVICE_PIN = ["DEV1", "DEV2", "DEV3"];
-var DEVICE_PIN_STATE = [0, 0, 0];
+const NUM_DEV = 4;
+const DEVICE_PIN = ["DEV1", "DEV2", "DEV3", "DEV4"];
+var DEVICE_PIN_STATE = [0, 0, 0, 0];
 var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 var line_chart;
@@ -125,7 +125,8 @@ function createButtonCallbacks() {
         state: DEVICE_PIN_STATE[i],
         div1: DEVICE_PIN_STATE[0],
         div2: DEVICE_PIN_STATE[1],
-        div3: DEVICE_PIN_STATE[2]
+        div3: DEVICE_PIN_STATE[2],
+        div4: DEVICE_PIN_STATE[3]
       })
     })
   }
@@ -187,9 +188,11 @@ function createSocketCallbacks() {
     dev1 = isNaN(data.dev1) ? 0 : data.dev1;
     dev2 = isNaN(data.dev2) ? 0 : data.dev2;
     dev3 = isNaN(data.dev3) ? 0 : data.dev3;
+    dev4 = isNaN(data.dev4) ? 0 : data.dev4;
     DEVICE_PIN_STATE[0] = dev1;
     DEVICE_PIN_STATE[1] = dev2;
     DEVICE_PIN_STATE[2] = dev3;
+    DEVICE_PIN_STATE[3] = dev4;
     updateBtnStyle();
   });
 }
